@@ -5,3 +5,4 @@
 -Création du Repository Github
 -Création du StaticController
 -Adaptation de la route
+-Création des templates index et base
