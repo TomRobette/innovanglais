@@ -1,4 +1,8 @@
 //Modifications (les plus récentes en haut) :
+#16/11/2020#TomRobette#
+-Installation d'apache-pack
+-Création de la table User (avec le make:user) et de la table Test, Tester
+
 #10/11/2020#TomRobette#
 -Finition de la bd sur papier
 -Création du squelette du projet
