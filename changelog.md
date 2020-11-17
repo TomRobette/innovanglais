@@ -1,4 +1,7 @@
 //Modifications (les plus récentes en haut) :
+#17/11/2020#TomRobette#
+-Ajout de la table Niveau, Entreprise, Liste, Theme, Vocabulaire, Catégorie, Langue
+
 #16/11/2020#TomRobette#
 -Installation d'apache-pack
 -Création de la table User (avec le make:user) et de la table Test, Tester

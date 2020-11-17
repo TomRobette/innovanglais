@@ -34,6 +34,11 @@ class Tester
      */
     private $test;
 
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $note;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -71,6 +76,18 @@ class Tester
     public function setTest(Test $test): self
     {
         $this->test = $test;
+
+        return $this;
+    }
+
+    public function getNote(): ?float
+    {
+        return $this->note;
+    }
+
+    public function setNote(?float $note): self
+    {
+        $this->note = $note;
 
         return $this;
     }

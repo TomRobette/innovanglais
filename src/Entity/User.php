@@ -41,6 +41,12 @@ class User implements UserInterface
      */
     private $testers;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Abonnement::class, inversedBy="users")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $abonnement;
+
     public function __construct()
     {
         $this->testers = new ArrayCollection();
@@ -150,6 +156,18 @@ class User implements UserInterface
                 $tester->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAbonnement(): ?Abonnement
+    {
+        return $this->abonnement;
+    }
+
+    public function setAbonnement(?Abonnement $abonnement): self
+    {
+        $this->abonnement = $abonnement;
 
         return $this;
     }
