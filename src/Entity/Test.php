@@ -22,6 +22,12 @@ class Test
      */
     private $nb_questions;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Niveau::class, inversedBy="tests")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $niveau;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +41,18 @@ class Test
     public function setNbQuestions(int $nb_questions): self
     {
         $this->nb_questions = $nb_questions;
+
+        return $this;
+    }
+
+    public function getNiveau(): ?Niveau
+    {
+        return $this->niveau;
+    }
+
+    public function setNiveau(?Niveau $niveau): self
+    {
+        $this->niveau = $niveau;
 
         return $this;
     }

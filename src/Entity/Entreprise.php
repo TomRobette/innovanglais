@@ -54,9 +54,15 @@ class Entreprise
      */
     private $listes;
 
+    /**
+     * @ORM\OneToMany(targetEntity=User::class, mappedBy="entreprise")
+     */
+    private $users;
+
     public function __construct()
     {
         $this->listes = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -160,6 +166,36 @@ class Entreprise
             // set the owning side to null (unless already changed)
             if ($liste->getIdEntreprise() === $this) {
                 $liste->setIdEntreprise(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUsers(): Collection
+    {
+        return $this->users;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->users->contains($user)) {
+            $this->users[] = $user;
+            $user->setEntreprise($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->users->removeElement($user)) {
+            // set the owning side to null (unless already changed)
+            if ($user->getEntreprise() === $this) {
+                $user->setEntreprise(null);
             }
         }
 
