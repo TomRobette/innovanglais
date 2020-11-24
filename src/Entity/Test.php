@@ -28,6 +28,12 @@ class Test
      */
     private $niveau;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Liste::class, inversedBy="tests")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $liste;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -53,6 +59,18 @@ class Test
     public function setNiveau(?Niveau $niveau): self
     {
         $this->niveau = $niveau;
+
+        return $this;
+    }
+
+    public function getListe(): ?Liste
+    {
+        return $this->liste;
+    }
+
+    public function setListe(?Liste $liste): self
+    {
+        $this->liste = $liste;
 
         return $this;
     }
