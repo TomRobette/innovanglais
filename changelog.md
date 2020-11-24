@@ -1,6 +1,7 @@
 //Modifications (les plus récentes en haut) :
 #17/11/2020#TomRobette#
 -Correction des liaisons de Tables
+-Création du Formulaire d'ajout de Vocabulaire
 
 #17/11/2020#TomRobette#
 -Ajout de la table Niveau, Entreprise, Liste, Theme, Vocabulaire, Catégorie, Langue
