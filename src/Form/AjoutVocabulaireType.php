@@ -21,6 +21,7 @@ class AjoutVocabulaireType extends AbstractType
             ->add('lang', EntityType::class,
             array('class' =>  'App\Entity\Langue',        
             'choice_label' => 'mot'))
+            ->add('ajouter', SubmitType::class)
         ;
     }
 
