@@ -1,4 +1,7 @@
 //Modifications (les plus récentes en haut) :
+#24/11/2020#HugoFontaine#
+-Ajout du controlleur Ajout Categorie
+
 #24/11/2020#TomRobette#
 -Correction des liaisons de Tables
 -Création du Formulaire d'ajout de Vocabulaire
