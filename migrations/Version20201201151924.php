@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20201124135025 extends AbstractMigration
+final class Version20201201151924 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -20,16 +20,12 @@ final class Version20201124135025 extends AbstractMigration
     public function up(Schema $schema) : void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE test ADD liste_id INT NOT NULL');
-        $this->addSql('ALTER TABLE test ADD CONSTRAINT FK_D87F7E0CE85441D8 FOREIGN KEY (liste_id) REFERENCES liste (id)');
-        $this->addSql('CREATE INDEX IDX_D87F7E0CE85441D8 ON test (liste_id)');
+        $this->addSql('ALTER TABLE abonnement CHANGE libelle libell VARCHAR(255) NOT NULL');
     }
 
     public function down(Schema $schema) : void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE test DROP FOREIGN KEY FK_D87F7E0CE85441D8');
-        $this->addSql('DROP INDEX IDX_D87F7E0CE85441D8 ON test');
-        $this->addSql('ALTER TABLE test DROP liste_id');
+        $this->addSql('ALTER TABLE abonnement CHANGE libell libelle VARCHAR(255) CHARACTER SET utf8mb4 NOT NULL COLLATE `utf8mb4_unicode_ci`');
     }
 }

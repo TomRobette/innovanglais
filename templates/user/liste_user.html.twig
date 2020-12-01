@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent()}} - liste utilisateur{% endblock %}
+
+{% block content %} 
+<div class="container-fluid">           
+    <div class="row justify-content-center">            
+        <h1 class="text-center text-primary p-4">Liste des utilisateurs</h1>        
+    </div>        
+    <div class="row justify-content-center">            
+    <div class="col-8 bg-white p-4 m-0 text-dark"> 
+    <table class="table table-hover">
+    <thead>
+        <tr>
+        <th scope="col">Email</th>
+        <th scope="col">Abonnement</th>
+        <th></th>
+        </tr>
+    </thead>
+    <tbody>
+      
+        {% for user in user %}
+            <tr class="{{ cycle(['table-secondary', 'table-light'], loop.index0)}}">
+
+                <td>{{user.email|capitalize}}</td>
+                {% if user.abonnement is not null %}
+                    <td>{{user.abonnement.libelle}}</td>
+                {% else %}
+                    <td></td>
+                {% endif %}
+                
+            </tr>
+        {% endfor %} 
+    </tbody>
+                                  
+    </div>        
+</div></div>    
+{% endblock %}

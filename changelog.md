@@ -2,6 +2,10 @@
 #01/12/2020#TomRobette#
 -Ajout des apis accessibles
 
+#01/12/2020#RemiAccart#
+-Ajout d'un formulaire permettant l'ajout d'utilisateur
+-Ajout de la liste des utilisateurs
+
 
 #24/11/2020#HugoFontaine#
 -Ajout du controlleur Ajout Categorie
@@ -11,6 +15,7 @@
 -Création du Formulaire d'ajout de Vocabulaire
 -Installation avec composer de Orm-pack, maker-bundle, api, orm-fixtures et faker
 public
+
 #17/11/2020#TomRobette#
 -Ajout de la table Niveau, Entreprise, Liste, Theme, Vocabulaire, Catégorie, Langue
 
