@@ -1,4 +1,8 @@
 //Modifications (les plus récentes en haut) :
+#01/12/2020#TomRobette#
+-Ajout des apis accessibles
+
+
 #24/11/2020#HugoFontaine#
 -Ajout du controlleur Ajout Categorie
 
@@ -6,7 +10,7 @@
 -Correction des liaisons de Tables
 -Création du Formulaire d'ajout de Vocabulaire
 -Installation avec composer de Orm-pack, maker-bundle, api, orm-fixtures et faker
-
+public
 #17/11/2020#TomRobette#
 -Ajout de la table Niveau, Entreprise, Liste, Theme, Vocabulaire, Catégorie, Langue
 
