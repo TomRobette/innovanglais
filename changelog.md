@@ -1,6 +1,7 @@
 //Modifications (les plus récentes en haut) :
 #01/12/2020#TomRobette#
 -Ajout des apis accessibles
+-Finition du formulaire AjoutVocabulaire
 
 
 #24/11/2020#HugoFontaine#
