@@ -2,28 +2,24 @@
 
 namespace App\Form;
 
-use App\Entity\Vocabulaire;
-use App\Entity\Categorie;
-use App\Entity\Langue;
+use App\Entity\Entreprise;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-class AjoutVocabulaireType extends AbstractType
+class AjoutEntrepriseType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('mot', TextType::class)
-            ->add('categorie', EntityType::class,
-            array('class' => 'App\Entity\Categorie',        
-            'choice_label' => 'libelle'))
-            ->add('lang', EntityType::class,
-            array('class' =>  'App\Entity\Langue',        
-            'choice_label' => 'nom'))
+            ->add('libelle', TextType::class)
+            ->add('raisonSociale', TextType::class)
+            ->add('adrVille', TextType::class)
+            ->add('adrCp', TextType::class)
+            ->add('adrRue', TextType::class)
+            ->add('adrNo', TextType::class)
             ->add('ajouter', SubmitType::class)
         ;
     }
@@ -31,7 +27,7 @@ class AjoutVocabulaireType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Vocabulaire::class,
+            'data_class' => Entreprise::class,
         ]);
     }
 }

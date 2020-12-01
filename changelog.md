@@ -1,6 +1,9 @@
 //Modifications (les plus récentes en haut) :
 #01/12/2020#TomRobette#
 -Ajout des apis accessibles
+-Finition du formulaire AjoutVocabulaire
+-Ajout d'une liste de Vocabulaires
+-Ajout d'un formulaire AjoutEntreprise
 
 #01/12/2020#RemiAccart#
 -Ajout d'un formulaire permettant l'ajout d'utilisateur
@@ -8,7 +11,7 @@
 
 
 #24/11/2020#HugoFontaine#
--Ajout du controlleur Ajout Categorie
+-Ajout ddu controlleur Ajout Categorie
 
 #24/11/2020#TomRobette#
 -Correction des liaisons de Tables
