@@ -36,4 +36,27 @@ class VocabulaireController extends AbstractController
             'form'=>$form->createView() 
         ]);
     }
+
+    /**
+     * @Route("/liste_vocabulaires", name="liste_vocabulaires")
+     */
+    public function liste_vocabulaires(Request $request)
+    {
+        $em = $this->getDoctrine();
+        $repoVoc = $em->getRepository(Vocabulaire::class);
+
+        if($request->get('supp')!=null){
+            $voc = $repoVoc->find($request->get('supp'));
+            if($voc!=null){
+                $em->getManager()->remove($voc);
+                $em->getManager()->flush();
+            }
+            $this->redirectToRoute('liste_vocabulaires');
+        }
+
+        $vocs = $repoVoc->findAll();
+        return $this->render('vocabulaire/liste_vocs.html.twig', [            
+            'vocs'=>$vocs
+        ]);
+    }
 }
