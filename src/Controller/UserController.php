@@ -6,11 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
-use App\Entity\Abonnement;
 use App\Form\AjoutUserType;
 use Symfony\Component\HttpFoundation\Request;
 use App\Repository\UserRepository;
-use App\Repository\AbonnementRepository;
+
 
 class UserController extends AbstractController
 {
@@ -20,20 +19,18 @@ class UserController extends AbstractController
     public function ajout_user(Request $request)
     {
         $user = new User();
-        $abonnement = new Abonnement();
 
         $form = $this->createForm(AjoutUserType::class, $user);
 
         if ($request->isMethod('POST')){
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()){
-                $abonnement->setAbonnement("1");
                 $em=$this->getDoctrine()->getManager();
                 $em->persist($user);
                 $em->flush();
                
                $this->addFlash('notice','Utilisateur ajouté');
-               return $this->redirectToRoute('Ajout_user');
+               return $this->redirectToRoute('ajout_user');
             }
         }
         return $this->render('user/ajout_user.html.twig', [
