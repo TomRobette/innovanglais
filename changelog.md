@@ -1,6 +1,7 @@
 //Modifications (les plus récentes en haut) :
 #14/12/2020#HugoFontaine#
 -Ajout de Niveau
+-Ajout abonnement
 
 #01/12/2020#TomRobette#
 -Ajout des apis accessibles
