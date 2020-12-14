@@ -3,6 +3,10 @@
 -Ajout de Niveau
 -Ajout abonnement
 
+#14/12/2020#RemiAccart
+-Menu d'ajout des utilisateur
+-Liste des utilisateur
+
 #01/12/2020#TomRobette#
 -Ajout des apis accessibles
 -Finition du formulaire AjoutVocabulaire
