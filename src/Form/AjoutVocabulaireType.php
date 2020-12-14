@@ -8,6 +8,9 @@ use App\Entity\Langue;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class AjoutVocabulaireType extends AbstractType
 {
@@ -17,10 +20,10 @@ class AjoutVocabulaireType extends AbstractType
             ->add('mot', TextType::class)
             ->add('categorie', EntityType::class,
             array('class' => 'App\Entity\Categorie',        
-            'choice_label' => 'mot'))
+            'choice_label' => 'libelle'))
             ->add('lang', EntityType::class,
             array('class' =>  'App\Entity\Langue',        
-            'choice_label' => 'mot'))
+            'choice_label' => 'nom'))
             ->add('ajouter', SubmitType::class)
         ;
     }

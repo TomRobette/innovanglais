@@ -35,21 +35,27 @@
 								<span class="material-icons md-48">contact_page</span>
 							</a>
 						</li>
+
+						<li class="nav-item active">
+							<a class="nav-link text-info" href="{{ path('ajoutCategorie')}}">
+								Ajout Catégorie
+							</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link text-info" href="{{ path('ajoutLangue')}}">
+								Ajout Langue
+							</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link text-info" href="{{ path('ajout_user')}}">
+								Ajout Utilisateur
+							</a>
+						</li>
 					</ul>
 					<form class="form-inline my-2 my-lg-0">
 						<input class="form-control mr-sm-2" type="text" placeholder="Search">
 						<button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
 					</form>
-					<li class="nav-item active">
-						<a class="nav-link text-info" href="{{ path('ajoutCategorie')}}">
-							<span class="material-icons md-48">ajoutCategorie</span>
-						</a>
-					</li>
-					<li class="nav-item active">
-						<a class="nav-link text-info" href="{{ path('ajoutLangue')}}">
-							<span class="material-icons md-48">ajoutLangue</span>
-						</a>
-					</li>
 				</div>
 			</nav>
 			{% for message in app.flashes('notice') %}
