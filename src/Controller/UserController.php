@@ -25,6 +25,11 @@ class UserController extends AbstractController
         if ($request->isMethod('POST')){
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()){
+                $mdpConf = $form->get('confirmation')->getData();
+                $mdp = $user->getPassword();
+                if($mdp==$mdpConf){
+                    $user->setRoles(array('ROLE_USER'));
+                    $user->setPassword($passwordEncoder->encodePassword($user, $user->getPassword()));
                 $em=$this->getDoctrine()->getManager();
                 $em->persist($user);
                 $em->flush();
@@ -45,7 +50,7 @@ class UserController extends AbstractController
         {
             $em = $this->getDoctrine();
             $repoUser = $em->getRepository(User::class);
-            $user = $repoUser->findAll();
+            $user = $repoUser->findBy(array(),array('id'=>'ASC'));
             return $this->render('user/liste_user.html.twig', [
                 'user'=>$user
             ]);
