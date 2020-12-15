@@ -6,6 +6,7 @@
 #15/12/2020#RemiAccart#
 -Ajout liste langue
 -Ajout liste categorie
+-Ajout liste entreprise
 
 #15/12/2020#HugoFontaine#
 -Ajout de theme

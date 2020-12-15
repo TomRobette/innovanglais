@@ -36,28 +36,20 @@
 							</a>
 						</li>
 
-						<li class="nav-item active">
-							<a class="nav-link text-info" href="{{ path('ajoutCategorie')}}">
-								Ajout Catégorie
-							</a>
-						</li>
-						<li class="nav-item active">
-							<a class="nav-link text-info" href="{{ path('ajoutLangue')}}">
-								Ajout Langue
-							</a>
-						</li>
-						<li class="nav-item active">
-							<a class="nav-link text-info" href="{{ path('ajout_user')}}">
-								Ajout Utilisateur
-							</a>
-						</li>
-
 						<li class="nav-item dropdown active">
-							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Entreprises</a>
+							<a class="nav-link dropdown-toggle text-info" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorie</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="{{ path('ajoutCategorie')}}">Ajout categorie</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="{{ path('listeCategorie')}}">Liste categorie</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown active">
+							<a class="nav-link dropdown-toggle text-info" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Entreprises</a>
 							<div class="dropdown-menu">
 								<a class="dropdown-item" href="{{ path('ajoutEntreprise')}}">Ajout entreprise</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Liste entreprises</a>
+								<a class="dropdown-item" href="{{ path('listeEntreprise')}}">Liste entreprises</a>
 							</div>
 						</li>
 	      				</li>
@@ -65,6 +57,7 @@
 	       					 <a class="nav-link dropdown-toggle text-info" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Langue</a>	        
 							<div class="dropdown-menu">
          					 <a class="dropdown-item text-info" href="{{path('ajoutLangue')}}">Ajout langue</a>
+							  <div class="dropdown-divider"></div>
 	         				 <a class="dropdown-item text-info" href="{{path('listeLangue')}}"}>Liste langue</a>
 	        				</div>
 	      				</li>
@@ -72,6 +65,7 @@
 	       					 <a class="nav-link dropdown-toggle text-info" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Utilisateur</a>	        
 							<div class="dropdown-menu">
          					 <a class="dropdown-item text-info" href="{{path('ajout_user')}}">Ajout Utilisateur</a>
+							  <div class="dropdown-divider"></div>
 	         				 <a class="dropdown-item text-info" href="{{path('liste_user')}}"}>Liste Utilisateur</a>
 	        				</div>
 	      				</li>

@@ -35,4 +35,19 @@ class EntrepriseController extends AbstractController
             'form'=>$form->createView() 
         ]);
     }
+
+           /**
+         * @Route("/listeEntreprise", name="listeEntreprise")
+         */
+        public function listeEntreprise(Request $request)
+        {
+            $em = $this->getDoctrine();
+            $repoEntreprise = $em->getRepository(Entreprise::class);
+            $entreprise = $repoEntreprise->findBy(array(),array('id'=>'ASC'));
+
+            
+            return $this->render('entreprise/listeEntreprise.html.twig', [
+                'entreprise'=>$entreprise
+            ]);
+        }
 }
