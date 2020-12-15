@@ -4,6 +4,7 @@
 -Mise en nullable de l'entreprise dans l'ajout d'utilisateur
 -Ajout de l'ajout Liste
 -Correction des placeholders
+-Corrections des bugs de Hugo
 
 #15/12/2020#RemiAccart#
 -Ajout liste langue

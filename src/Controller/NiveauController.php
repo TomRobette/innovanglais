@@ -17,7 +17,7 @@ class NiveauController extends AbstractController
     public function ajoutNiveau(Request $request)
     {
         $niveau = new Niveau();
-        $form = $this->createForm(AjoutNiveauType::class,$langue);
+        $form = $this->createForm(AjoutNiveauType::class,$niveau);
 
 
 
