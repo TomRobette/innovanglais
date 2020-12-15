@@ -3,6 +3,14 @@
 -Ajout d'un lien vers l'ajout d'entreprise
 -Mise en nullable de l'entreprise dans l'ajout d'utilisateur
 -Ajout de l'ajout Liste
+#15/12/2020#RemiAccart#
+-Ajout liste langue
+-Ajout liste categorie
+
+#15/12/2020#HugoFontaine#
+-Ajout de theme
+-Ajout de test
+
 
 #14/12/2020#RemiAccart#
 -Ajout d'un formulaire permettant l'ajout d'utilisateur

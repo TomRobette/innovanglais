@@ -36,6 +36,7 @@
 							</a>
 						</li>
 
+<<<<<<< HEAD
 						<li class="nav-item active">
 							<a class="nav-link text-info" href="{{ path('ajoutCategorie')}}">
 								Ajout Catégorie
@@ -60,6 +61,29 @@
 								<a class="dropdown-item" href="#">Liste entreprises</a>
 							</div>
 						</li>
+=======
+						<li class="nav-item dropdown active">
+	       					 <a class="nav-link dropdown-toggle text-info" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorie</a>
+							<div class="dropdown-menu">
+         					 <a class="dropdown-item text-info" href="{{path('ajoutCategorie')}}">Ajout categorie</a>
+	         				 <a class="dropdown-item text-info" href="{{path('listeCategorie')}}"}>Liste categorie</a>
+	        				</div>
+	      				</li>
+						<li class="nav-item dropdown active">
+	       					 <a class="nav-link dropdown-toggle text-info" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Langue</a>	        
+							<div class="dropdown-menu">
+         					 <a class="dropdown-item text-info" href="{{path('ajoutLangue')}}">Ajout langue</a>
+	         				 <a class="dropdown-item text-info" href="{{path('listeLangue')}}"}>Liste langue</a>
+	        				</div>
+	      				</li>
+						<li class="nav-item dropdown active">
+	       					 <a class="nav-link dropdown-toggle text-info" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Utilisateur</a>	        
+							<div class="dropdown-menu">
+         					 <a class="dropdown-item text-info" href="{{path('ajout_user')}}">Ajout Utilisateur</a>
+	         				 <a class="dropdown-item text-info" href="{{path('liste_user')}}"}>Liste Utilisateur</a>
+	        				</div>
+	      				</li>
+>>>>>>> f22470bb6bb92b8b31028597562b279893f8421c
 					</ul>
 					<form class="form-inline my-2 my-lg-0">
 						<input class="form-control mr-sm-2" type="text" placeholder="Search">

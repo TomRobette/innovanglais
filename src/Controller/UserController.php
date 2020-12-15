@@ -9,6 +9,7 @@ use App\Entity\User;
 use App\Form\AjoutUserType;
 use Symfony\Component\HttpFoundation\Request;
 use App\Repository\UserRepository;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 
 class UserController extends AbstractController
@@ -16,7 +17,7 @@ class UserController extends AbstractController
     /**
      * @Route("/ajout_user", name="ajout_user")
      */
-    public function ajout_user(Request $request)
+    public function ajout_user(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
         $user = new User();
 
@@ -29,10 +30,12 @@ class UserController extends AbstractController
                 $mdp = $user->getPassword();
                 if($mdp==$mdpConf){
                     $user->setRoles(array('ROLE_USER'));
-                    $user->setPassword($passwordEncoder->encodePassword($user, $user->getPassword()));
-                $em=$this->getDoctrine()->getManager();
-                $em->persist($user);
-                $em->flush();
+                    $user->setPassword($passwordEncoder->encodePassword($user, $user->getPassword())); 
+                    $em=$this->getDoctrine()->getManager();
+                    $em->persist($user);
+                    $em->flush();
+                }
+               
                
                $this->addFlash('notice','Utilisateur ajouté');
                return $this->redirectToRoute('ajout_user');
@@ -42,7 +45,7 @@ class UserController extends AbstractController
             'form'=>$form->createView()
         ]);
         }
-    }
+    
                /**
          * @Route("/liste_user", name="liste_user")
          */

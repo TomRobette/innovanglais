@@ -37,4 +37,19 @@ class LangueController extends AbstractController
             'form'=>$form->createView()
         ]);
     }
+
+           /**
+         * @Route("/listeLangue", name="listeLangue")
+         */
+        public function listeLangue(Request $request)
+        {
+            $em = $this->getDoctrine();
+            $repoLangue = $em->getRepository(Langue::class);
+            $langue = $repoLangue->findBy(array(),array('id'=>'ASC'));
+
+            
+            return $this->render('langue/listeLangue.html.twig', [
+                'langue'=>$langue
+            ]);
+        }
 }
