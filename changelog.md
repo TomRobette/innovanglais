@@ -3,11 +3,26 @@
 -Ajout d'un formulaire permettant l'ajout d'utilisateur
 -Ajout de la liste des utilisateurs
 
+#14/12/2020#HugoFontaine#
+-Ajout de Niveau
+-Ajout abonnement
+
+#14/12/2020#RemiAccart
+-Menu d'ajout des utilisateur
+-Liste des utilisateur
+
 #01/12/2020#TomRobette#
 -Ajout des apis accessibles
 -Finition du formulaire AjoutVocabulaire
 -Ajout d'une liste de Vocabulaires
 -Ajout d'un formulaire AjoutEntreprise
+
+#01/12/2020#RemiAccart#
+-Ajout d'un formulaire permettant l'ajout d'utilisateur
+-Ajout de la liste des utilisateurs
+
+#01/12/2020#HugoFontaine#
+-Ajout de theme
 
 #24/11/2020#HugoFontaine#
 -Ajout du controlleur Ajout Categorie

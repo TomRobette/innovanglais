@@ -37,4 +37,18 @@ class CategorieController extends AbstractController
             'form'=>$form->createView()
         ]);
     }
+
+    /**     
+     * @Route("/liste_categories", name="liste_categories")     
+    */
+        public function listeCategories(Request $request)
+            {
+              $em = $this->getDoctrine();
+              $repoCategorie = $em->getRepository(Categorie::class);
+
+              $categories = $repoCategorie->findBy(array(),array('libelle'=>'ASC'));
+              return $this->render('categorie/liste_categories.html.twig', [           
+                'categories'=>$categories // Nous passons la liste des thèmes à la vue        
+                ]);
+            }
 }
