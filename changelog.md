@@ -1,4 +1,9 @@
 //Modifications (les plus récentes en haut) :
+#15/12/2020#TomRobette#
+-Ajout d'un lien vers l'ajout d'entreprise
+-Mise en nullable de l'entreprise dans l'ajout d'utilisateur
+-Ajout de l'ajout Liste
+
 #14/12/2020#RemiAccart#
 -Ajout d'un formulaire permettant l'ajout d'utilisateur
 -Ajout de la liste des utilisateurs
