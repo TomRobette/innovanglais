@@ -17,7 +17,8 @@ class AbonnementController extends AbstractController
     public function ajoutAbonnement(Request $request)
     {
         $abonnement = new Abonnement();
-        $form = $this->createForm(AjoutAbonnementType::class,$langue);
+        $form = $this->createForm(AjoutAbonnementType::class,$abonnement);
+        
         if ($request->isMethod('POST')){            
             $form -> handleRequest ($request);            
             if($form->isValid()){              

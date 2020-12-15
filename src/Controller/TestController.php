@@ -17,7 +17,7 @@ class TestController extends AbstractController
     public function ajoutTest(Request $request)
     {
         $test = new Test();
-        $form = $this->createForm(AjoutTestType::class,$langue);
+        $form = $this->createForm(AjoutTestType::class);
         if ($request->isMethod('POST')){            
             $form -> handleRequest ($request);            
             if($form->isValid()){              

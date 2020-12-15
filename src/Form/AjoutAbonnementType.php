@@ -16,7 +16,7 @@ class AjoutAbonnementType extends AbstractType
         $builder
             ->add('libelle', TextType::class)
             ->add('typePaiement', TextType::class)
-            ->add('ajouter', SubmitType::class)
+            ->add('send', SubmitType::class)
         ;
     }
 

@@ -1,32 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-	{{parent()}}
-	- Ajout Abonnement
-{% endblock %}
+{% block title %}{{parent()}}AjoutAbonnement{% endblock %}
 
-{% block body %}
-	{{parent()}}
-	<div class="container">
-		<div class="row justify-content-center">
-			<h1 class="text-center text-primary p-4">Ajout d'un Abonnement
-			</h1>
-		</div>
-		<div class="row justify-content-center">
-			<div class="col-12 bg-white p-4 m-0 text-primary">
-				{{ form_start(form) }}
-				<div class="form-group">
-					{{ form_label(form.libelle, 'Libelle ', {'label_attr': {'class': 'font-weight-bold'}}) }}
-                    {{ form_label(form.typePaiement, 'Type de paiement ', {'label_attr': {'class': 'font-weight-bold'}}) }}
-				</div>
-				<div class="form-group mx-auto text-center">
-					{{ form_widget(form.envoyer, { 'label': "Envoyer", 'attr': {'class': 'btn font-weight-bold bg-primary text-white mx-auto text-center'}}) }}
-				</div>
-			</div>
-		</div>
-	</div>
-
-	{{form_end(form) }}
-
-
+{% block content %}
+<div class="container-fluid">           
+    <div class="row justify-content-center">            
+        <h1 class="text-center text-primary p-4">Ajout des abonnements</h1>        
+    </div>        
+    <div class="row justify-content-center">            
+        <div class="col-8 bg-white p-4 m-0 text-dark">                
+    {{ form_start(form) }}
+                <div class="form-group">                    
+                    {{ form_label(form.libelle, 'Libelle (*) ', {'label_attr': {'class': 'font-weight-bold'}}) }}                    
+                    {{ form_widget(form.libelle, {'attr': {'class': 'form-control'}}) }}                
+                </div>
+                <div class="form-group">                    
+                    {{ form_label(form.typePaiement, 'Type du payement (*) ', {'label_attr': {'class': 'font-weight-bold'}}) }}                    
+                    {{ form_widget(form.typePaiement, {'attr': {'class': 'form-control'}}) }}                
+                </div>
+                <div class="form-group mx-auto text-center">                    
+                {{ form_widget(form.send, { 'label': "Envoyer", 'attr': {'class': 'btn font-weight-bold bg-primary text-white mx-auto text-center'}}) }}                
+            </div>                                
+        {{ form_end(form) }}                
+    </div>        
+</div></div>    
 {% endblock %}

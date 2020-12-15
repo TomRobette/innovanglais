@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 
 
 class AjoutUserType extends AbstractType
@@ -16,7 +17,7 @@ class AjoutUserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email')
+            ->add('email', EmailType::Class)
          /*   ->add('roles')*/
             ->add('password', PasswordType::Class)
             ->add('confirmation', PasswordType::class,['mapped'=>false])
