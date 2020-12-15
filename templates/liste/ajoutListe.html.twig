@@ -24,15 +24,9 @@
 					{{ form_label(form.theme, 'Theme (*) ', {'label_attr': {'class': 'font-weight-bold'}}) }}
 					{{ form_widget(form.theme) }}
 				</div>
-				<div>
-					<ul id="email-fields-list" data-prototype="{{ form_widget(form.emails.vars.prototype)|e }}" data-widget-tags="{{ '<li></li>'|e }}" data-widget-counter="{{ form.emails|length }}">
-						{% for mot in form.listeMots %}
-							<li>
-								{{ form_errors(mot) }}
-								{{ form_widget(mot) }}
-							</li>
-						{% endfor %}
-					</ul>
+				<div class="form-group">
+					{{ form_label(form.listeMots, 'Les mots (*) ', {'label_attr': {'class': 'font-weight-bold'}}) }}
+					{{ form_widget(form.listeMots) }}
 				</div>
 				<div class="form-group mx-auto text-center">
 					{{ form_widget(form.ajouter, { 'label': "Envoyer", 'attr': {'class': 'btn font-weight-bold bg-primary text-white mx-auto text-center'}}) }}
