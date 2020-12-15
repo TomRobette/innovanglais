@@ -36,21 +36,27 @@
 							</a>
 						</li>
 
-						<li class="nav-item active">
-							<a class="nav-link text-info" href="{{ path('ajoutCategorie')}}">
-								Ajout Catégorie
-							</a>
-						</li>
-						<li class="nav-item active">
-							<a class="nav-link text-info" href="{{ path('ajoutLangue')}}">
-								Ajout Langue
-							</a>
-						</li>
-						<li class="nav-item active">
-							<a class="nav-link text-info" href="{{ path('ajout_user')}}">
-								Ajout Utilisateur
-							</a>
-						</li>
+						<li class="nav-item dropdown active">
+	       					 <a class="nav-link dropdown-toggle text-info" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categorie</a>
+							<div class="dropdown-menu">
+         					 <a class="dropdown-item text-info" href="{{path('ajoutCategorie')}}">Ajout categorie</a>
+	         				 <a class="dropdown-item text-info" href="{{path('listeCategorie')}}"}>Liste categorie</a>
+	        				</div>
+	      				</li>
+						<li class="nav-item dropdown active">
+	       					 <a class="nav-link dropdown-toggle text-info" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Langue</a>	        
+							<div class="dropdown-menu">
+         					 <a class="dropdown-item text-info" href="{{path('ajoutLangue')}}">Ajout langue</a>
+	         				 <a class="dropdown-item text-info" href="{{path('listeLangue')}}"}>Liste langue</a>
+	        				</div>
+	      				</li>
+						<li class="nav-item dropdown active">
+	       					 <a class="nav-link dropdown-toggle text-info" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Utilisateur</a>	        
+							<div class="dropdown-menu">
+         					 <a class="dropdown-item text-info" href="{{path('ajout_user')}}">Ajout Utilisateur</a>
+	         				 <a class="dropdown-item text-info" href="{{path('liste_user')}}"}>Liste Utilisateur</a>
+	        				</div>
+	      				</li>
 					</ul>
 					<form class="form-inline my-2 my-lg-0">
 						<input class="form-control mr-sm-2" type="text" placeholder="Search">

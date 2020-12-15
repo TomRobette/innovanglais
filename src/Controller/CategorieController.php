@@ -38,17 +38,18 @@ class CategorieController extends AbstractController
         ]);
     }
 
-    /**     
-     * @Route("/liste_categories", name="liste_categories")     
-    */
-        public function listeCategories(Request $request)
-            {
-              $em = $this->getDoctrine();
-              $repoCategorie = $em->getRepository(Categorie::class);
+          /**
+         * @Route("/listeCategorie", name="listeCategorie")
+         */
+        public function liste_categorie(Request $request)
+        {
+            $em = $this->getDoctrine();
+            $repoCategorie = $em->getRepository(Categorie::class);
+            $categorie = $repoCategorie->findBy(array(),array('id'=>'ASC'));
 
-              $categories = $repoCategorie->findBy(array(),array('libelle'=>'ASC'));
-              return $this->render('categorie/liste_categories.html.twig', [           
-                'categories'=>$categories // Nous passons la liste des thèmes à la vue        
-                ]);
-            }
+            
+            return $this->render('categorie/listeCategorie.html.twig', [
+                'categorie'=>$categorie
+            ]);
+        }
 }

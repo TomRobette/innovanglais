@@ -14,14 +14,14 @@
         <tr>
         <th scope="col">Email</th>
         <th scope="col">Abonnement</th>
-        <th scope="col">password</th>
+        <th scope="col">Entreprise</th>
         <th></th>
         </tr>
     </thead>
     <tbody>
       
         {% for user in user %}
-            <tr class="{{ cycle(['table-secondary', 'table-light'], loop.index0)}}">
+            <tr class="{{ cycle(['table-info', 'table-light'], loop.index0)}}">
 
                 <td>{{user.email|capitalize}}</td>
                 {% if user.abonnement is not null %}
@@ -29,7 +29,11 @@
                 {% else %}
                     <td></td>
                 {% endif %}
-                <td>{{user.password}}</td>
+                {% if user.entreprise is not null %}
+                    <td>{{user.entreprise.libelle}}</td>
+                {% else %}
+                    <td>Aucune</td>
+                {% endif %}
 
             </tr>
         {% endfor %} 
