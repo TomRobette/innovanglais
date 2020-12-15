@@ -1,4 +1,8 @@
 //Modifications (les plus récentes en haut) :
+#15/12/2020#RemiAccart#
+-Ajout liste langue
+-Ajout liste categorie
+
 #15/12/2020#HugoFontaine#
 -Ajout de theme
 -Ajout de test
