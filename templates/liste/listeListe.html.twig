@@ -13,6 +13,7 @@
     <thead>
         <tr>
         <th scope="col">N°</th>
+        <th scope="col">Nom</th>
         <th scope="col">Entreprise</th>
         <th scope="col">Theme</th>
         </tr>
@@ -23,8 +24,10 @@
             <tr class="{{ cycle(['table-info', 'table-light'], loop.index0)}}">
 
                 <td>{{liste.id}}</td>
+                <td>{{liste.nom}}</td>
                 <td>{{liste.idEntreprise.libelle}}</td>
                 <td>{{liste.theme.libelle}}</td>
+                <td><a href="{{path('listeListe',{'supp':liste.id})}}"><span class="material-icons text-dark" title="Supprimer le test">delete</span></a></td>
 
             </tr>
         {% endfor %} 

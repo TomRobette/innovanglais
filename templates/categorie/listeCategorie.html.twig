@@ -23,6 +23,7 @@
 
                 <td>{{categorie.id}}</td>
                 <td>{{categorie.libelle}}</td>
+                <td><a href="{{path('listeCategorie',{'supp':categorie.id})}}"><span class="material-icons text-dark" title="Supprimer le test">delete</span></a></td>
 
             </tr>
         {% endfor %} 

@@ -45,8 +45,17 @@ class CategorieController extends AbstractController
         {
             $em = $this->getDoctrine();
             $repoCategorie = $em->getRepository(Categorie::class);
-            $categorie = $repoCategorie->findBy(array(),array('id'=>'ASC'));
 
+            if($request->get('supp')!=null){
+                $categorie = $repoCategorie->find($request->get('supp'));
+                if($categorie!=null){
+                    $em->getManager()->remove($categorie);
+                    $em->getManager()->flush();
+                }
+                $this->redirectToRoute('listeCategorie');
+            }
+    
+            $categorie = $repoCategorie->findBy(array(), array('id'=>'ASC'));
             
             return $this->render('categorie/listeCategorie.html.twig', [
                 'categorie'=>$categorie

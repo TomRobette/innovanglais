@@ -34,6 +34,7 @@
                 {% else %}
                     <td>Aucune</td>
                 {% endif %}
+                <td><a href="{{path('modifUser',{'id':user.id})}}"><span class="material-icons text-dark" title="Modifier le thème">create</span></a><a href="{{path('liste_user',{'supp':user.id})}}"><span class="material-icons text-dark" title="Supprimer l'utilisateur">delete</span></a></td>
 
             </tr>
         {% endfor %} 

@@ -43,8 +43,17 @@ class EntrepriseController extends AbstractController
         {
             $em = $this->getDoctrine();
             $repoEntreprise = $em->getRepository(Entreprise::class);
-            $entreprise = $repoEntreprise->findBy(array(),array('id'=>'ASC'));
 
+            if($request->get('supp')!=null){
+                $entreprise = $repoEntreprise->find($request->get('supp'));
+                if($entreprise!=null){
+                    $em->getManager()->remove($entreprise);
+                    $em->getManager()->flush();
+                }
+                $this->redirectToRoute('listeEntreprise');
+            }
+    
+            $entreprise = $repoEntreprise->findBy(array(), array('id'=>'ASC'));
             
             return $this->render('entreprise/listeEntreprise.html.twig', [
                 'entreprise'=>$entreprise

@@ -25,6 +25,7 @@
                 <td>{{abonnement.id}}</td>
                 <td>{{abonnement.libelle}}</td>
                 <td>{{abonnement.typePaiement}}</td>
+                <td><a href="{{path('listeAbonnement',{'supp':abonnement.id})}}"><span class="material-icons text-dark" title="Supprimer le test">delete</span></a></td>
 
             </tr>
         {% endfor %} 

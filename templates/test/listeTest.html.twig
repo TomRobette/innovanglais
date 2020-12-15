@@ -27,6 +27,7 @@
                 <td>{{test.nbQuestions}}</td>
                 <td>{{test.niveau.libelle}}</td>
                 <td>{{test.liste.nom}}</td>
+                <td><a href="{{path('modifTest',{'id':test.id})}}"><span class="material-icons text-dark" title="Modifier le thème">create</span></a><a href="{{path('listeTest',{'supp':test.id})}}"><span class="material-icons text-dark" title="Supprimer le test">delete</span></a></td>
 
             </tr>
         {% endfor %} 

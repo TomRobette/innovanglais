@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\AjoutVocabulaireType;
+use App\Form\ModifVocabulaireType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -51,12 +52,44 @@ class VocabulaireController extends AbstractController
                 $em->getManager()->remove($voc);
                 $em->getManager()->flush();
             }
-            $this->redirectToRoute('liste_vocabulaires');
+            $this->redirectToRoute('listeVocabulaire');
         }
 
-        $vocs = $repoVoc->findAll();
+        $vocs = $repoVoc->findBy(array(), array('id'=>'ASC'));
         return $this->render('vocabulaire/listeVocabulaire.html.twig', [            
             'vocs'=>$vocs
+        ]);
+    }
+
+    /**
+     * @Route("/modifVocabulaire/{id}", name="modifVocabulaire", requirements={"id"="\d+"})
+     */
+    public function modifVocabulaire(int $id, Request $request)
+    {
+        $em = $this->getDoctrine();
+        $repoVocabulaire = $em->getRepository(Vocabulaire::class);
+        $vocs = $repoVocabulaire->find($id);
+
+        if($vocs==null){
+            $this->addFlash('notice','Cette page n\'existe pas');
+            return $this->redirectToRoute('listeVocabulaire');   
+        }
+
+        $form = $this->createForm(ModifVocabulaireType::class,$vocs);
+
+        if ($request->isMethod('POST')) {            
+            $form->handleRequest($request);            
+            if ($form->isSubmitted() && $form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($vocs);
+                $em->flush();
+                $this->addFlash('notice','Vocabulaire modifié');
+                return $this->redirectToRoute('listeVocabulaire');        
+            }          
+        } 
+
+        return $this->render('vocabulaire/modifVocabulaire.html.twig', [            
+            'form'=>$form->createView()        
         ]);
     }
 }

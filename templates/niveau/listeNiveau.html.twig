@@ -23,6 +23,7 @@
 
                 <td>{{niveau.id}}</td>
                 <td>{{niveau.libelle}}</td>
+                <td><a href="{{path('listeNiveau',{'supp':niveau.id})}}"><span class="material-icons text-dark" title="Supprimer le niveau">delete</span></a></td>
 
             </tr>
         {% endfor %} 
