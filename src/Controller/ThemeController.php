@@ -17,7 +17,7 @@ class ThemeController extends AbstractController
     public function ajoutTheme(Request $request)
     {
         $theme = new Theme();
-        $form = $this->createForm(AjoutThemeType::class,$langue);
+        $form = $this->createForm(AjoutThemeType::class,$theme);
         if ($request->isMethod('POST')){            
             $form -> handleRequest ($request);            
             if($form->isValid()){              
