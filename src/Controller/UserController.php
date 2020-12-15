@@ -41,9 +41,9 @@ class UserController extends AbstractController
         return $this->render('user/ajout_user.html.twig', [
             'form'=>$form->createView()
         ]);
+        }
     }
-
-                /**
+               /**
          * @Route("/liste_user", name="liste_user")
          */
         public function liste_user(Request $request)
@@ -51,6 +51,8 @@ class UserController extends AbstractController
             $em = $this->getDoctrine();
             $repoUser = $em->getRepository(User::class);
             $user = $repoUser->findBy(array(),array('id'=>'ASC'));
+
+            
             return $this->render('user/liste_user.html.twig', [
                 'user'=>$user
             ]);
