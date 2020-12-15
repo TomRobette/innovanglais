@@ -5,6 +5,7 @@
 -Ajout de l'ajout Liste
 -Correction des placeholders
 -Corrections des bugs de Hugo
+-Tentative d'ajout de mot dans listeMots de Liste
 
 #15/12/2020#RemiAccart#
 -Ajout liste langue
