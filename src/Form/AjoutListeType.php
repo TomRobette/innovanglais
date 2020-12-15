@@ -15,9 +15,7 @@ class AjoutListeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('idEntreprise',EntityType::Class,array('class' => 'App\Entity\Entreprise','choice_label' => 'libelle'), [
-                'required'          => false
-            ])
+            ->add('idEntreprise',EntityType::Class,['class' => 'App\Entity\Entreprise','choice_label' => 'libelle', 'required'=> false])
             ->add('theme',EntityType::Class,array('class' => 'App\Entity\Theme','choice_label' => 'libelle'))
             ->add('ajouter', SubmitType::class)
         ;

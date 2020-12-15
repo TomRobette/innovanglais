@@ -22,9 +22,7 @@ class AjoutUserType extends AbstractType
             ->add('password', PasswordType::Class)
             ->add('confirmation', PasswordType::class,['mapped'=>false])
             ->add('abonnement',EntityType::Class,array('class' => 'App\Entity\Abonnement','choice_label' => 'libelle'))
-            ->add('entreprise',EntityType::Class,array('class' => 'App\Entity\Entreprise','choice_label' => 'libelle'), [
-                'required'          => false
-            ])
+            ->add('entreprise',EntityType::Class,['class' => 'App\Entity\Entreprise','choice_label' => 'libelle','required'=> false])
             ->add('send', SubmitType::class);
         ;
     }
