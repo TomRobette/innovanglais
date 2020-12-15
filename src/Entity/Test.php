@@ -20,7 +20,7 @@ class Test
     /**
      * @ORM\Column(type="integer")
      */
-    private $nb_questions;
+    private $nbQuestions;
 
     /**
      * @ORM\ManyToOne(targetEntity=Niveau::class, inversedBy="tests")
@@ -41,12 +41,12 @@ class Test
 
     public function getNbQuestions(): ?int
     {
-        return $this->nb_questions;
+        return $this->nbQuestions;
     }
 
-    public function setNbQuestions(int $nb_questions): self
+    public function setNbQuestions(int $nbQuestions): self
     {
-        $this->nb_questions = $nb_questions;
+        $this->nbQuestions = $nbQuestions;
 
         return $this;
     }
