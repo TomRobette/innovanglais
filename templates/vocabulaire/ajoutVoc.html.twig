@@ -15,6 +15,14 @@
                 <div class="form-group">                    
                     {{ form_label(form.mot, 'Mot ', {'label_attr': {'class': 'font-weight-bold'}}) }}                    
                     {{ form_widget(form.mot, {'attr': {'class': 'form-control'}}) }}                
+                </div>
+                <div class="form-group">                    
+                    {{ form_label(form.categorie, 'Catégorie (*) ', {'label_attr': {'class': 'font-weight-bold'}}) }}                    
+                    {{ form_widget(form.categorie) }}                
+                </div>
+                <div class="form-group">                    
+                    {{ form_label(form.lang, 'Langue (*) ', {'label_attr': {'class': 'font-weight-bold'}}) }}                    
+                    {{ form_widget(form.lang) }}                
                 </div>              
                 <div class="form-group mx-auto text-center">                    
                     {{ form_widget(form.ajouter, { 'label': "Ajouter", 'attr': {'class': 'btn font-weight-bold bg-primary text-white mx-auto text-center'}}) }}                
