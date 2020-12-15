@@ -10,9 +10,14 @@
 -Ajout liste categorie
 -Ajout liste entreprise
 -Remake du ajout abonnement
+-Ajout liste abonnement
+-Ajout liste liste
+-Ajout liste test
+-Ajout liste theme
+-Ajout liste vocabulaire
 
 #15/12/2020#HugoFontaine#
--Ajout de theme
+-Correction de theme
 -Ajout de test
 
 

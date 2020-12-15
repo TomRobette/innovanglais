@@ -34,4 +34,19 @@ class TestController extends AbstractController
             'form'=>$form->createView()
         ]);
     }
+
+            /**
+         * @Route("/listeTest", name="listeTest")
+         */
+        public function listeTest(Request $request)
+        {
+            $em = $this->getDoctrine();
+            $repoTest = $em->getRepository(Test::class);
+            $test = $repoTest->findBy(array(),array('id'=>'ASC'));
+
+            
+            return $this->render('test/listeTest.html.twig', [
+                'test'=>$test
+            ]);
+        }
 }

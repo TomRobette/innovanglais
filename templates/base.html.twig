@@ -41,7 +41,7 @@
 							<div class="dropdown-menu">
 								<a class="dropdown-item" href="{{ path('ajoutAbonnement')}}">Ajout abonnement</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="{{ path('listeCategorie')}}">Liste abonnement</a>
+								<a class="dropdown-item" href="{{ path('listeAbonnement')}}">Liste abonnement</a>
 							</div>
 						</li>
 						<li class="nav-item dropdown active">
@@ -74,7 +74,7 @@
 							<div class="dropdown-menu">
 								<a class="dropdown-item" href="{{ path('ajoutListe')}}">Ajout liste</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="{{ path('listeCategorie')}}">Liste abonnement</a>
+								<a class="dropdown-item" href="{{ path('listeListe')}}">Liste liste</a>
 							</div>
 						</li>
 						<li class="nav-item dropdown active">
@@ -86,11 +86,27 @@
 	        				</div>
 	      				</li>
 						<li class="nav-item dropdown active">
+							<a class="nav-link dropdown-toggle text-info" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Vocabulaire</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="{{ path('ajoutVocabulaire')}}">Ajout Vocabulaire</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="{{ path('listeVocabulaire')}}">Liste Vocabulaire</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown active">
+							<a class="nav-link dropdown-toggle text-info" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Theme</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="{{ path('ajoutTheme')}}">Ajout theme</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="{{ path('listeTheme')}}">Liste theme</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown active">
 							<a class="nav-link dropdown-toggle text-info" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Test</a>
 							<div class="dropdown-menu">
 								<a class="dropdown-item" href="{{ path('ajoutTest')}}">Ajout test</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="{{ path('listeCategorie')}}">Liste abonnement</a>
+								<a class="dropdown-item" href="{{ path('listeTest')}}">Liste test</a>
 							</div>
 						</li>
 					</ul>

@@ -38,9 +38,9 @@ class VocabulaireController extends AbstractController
     }
 
     /**
-     * @Route("/liste_vocabulaires", name="liste_vocabulaires")
+     * @Route("/listeVocabulaire", name="listeVocabulaire")
      */
-    public function liste_vocabulaires(Request $request)
+    public function listeVocabulaires(Request $request)
     {
         $em = $this->getDoctrine();
         $repoVoc = $em->getRepository(Vocabulaire::class);
@@ -55,7 +55,7 @@ class VocabulaireController extends AbstractController
         }
 
         $vocs = $repoVoc->findAll();
-        return $this->render('vocabulaire/liste_vocs.html.twig', [            
+        return $this->render('vocabulaire/listeVocabulaire.html.twig', [            
             'vocs'=>$vocs
         ]);
     }

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent()}} - liste liste{% endblock %}
+
+{% block content %} 
+<div class="container-fluid">           
+    <div class="row justify-content-center">            
+        <h1 class="text-center text-primary p-4">Liste des listes</h1>        
+    </div>        
+    <div class="row justify-content-center">            
+    <div class="col-8 bg-white p-4 m-0 text-dark"> 
+    <table class="table table-hover">
+    <thead>
+        <tr>
+        <th scope="col">id</th>
+        <th scope="col">Entreprise</th>
+        <th scope="col">Theme</th>
+        </tr>
+    </thead>
+    <tbody>
+      
+        {% for liste in liste %}
+            <tr class="{{ cycle(['table-info', 'table-light'], loop.index0)}}">
+
+                <td>{{liste.id}}</td>
+                <td>{{liste.idEntreprise.libelle}}</td>
+                <td>{{liste.theme.libelle}}</td>
+
+            </tr>
+        {% endfor %} 
+    </tbody>
+                                  
+    </div>        
+</div></div>    
+{% endblock %}
