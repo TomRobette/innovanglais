@@ -27,7 +27,7 @@ class ListeController extends AbstractController
                 $em->persist($liste);
                 $em->flush();
 
-                $this->addFlash('notice','Liste insérée');
+                $this->addFlash('notice','Liste ajouté');
                 return $this->redirectToRoute('static');        
             }          
         }

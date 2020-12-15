@@ -27,7 +27,7 @@ class EntrepriseController extends AbstractController
                 $em->persist($entreprise);
                 $em->flush();
 
-                $this->addFlash('notice','Entreprise insérée');
+                $this->addFlash('notice','Entreprise ajouté');
                 return $this->redirectToRoute('static');        
             }          
         }

@@ -12,8 +12,13 @@
     <table class="table table-hover">
     <thead>
         <tr>
-        <th scope="col">Id</th>
+        <th scope="col">N°</th>
         <th scope="col">Nom</th>
+        <th scope="col">Raison sociale</th>
+        <th scope="col">Ville</th>
+        <th scope="col">Code postal</th>
+        <th scope="col">Nom rue</th>
+        <th scope="col">N° de rue</th>
         </tr>
     </thead>
     <tbody>
@@ -23,6 +28,11 @@
 
                 <td>{{entreprise.id}}</td>
                 <td>{{entreprise.libelle|capitalize}}</td>
+                <td>{{entreprise.raisonSociale|capitalize}}</td>
+                <td>{{entreprise.adrVille|capitalize}}</td>
+                <td>{{entreprise.adrCp|capitalize}}</td>
+                <td>{{entreprise.adrRue|capitalize}}</td>
+                <td>{{entreprise.adrNo|capitalize}}</td>
 
             </tr>
         {% endfor %} 

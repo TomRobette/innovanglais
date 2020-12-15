@@ -28,7 +28,7 @@ class VocabulaireController extends AbstractController
                 $em->persist($vocabulaire);
                 $em->flush();
 
-                $this->addFlash('notice','Vocabulaire inséré');
+                $this->addFlash('notice','Vocabulaire Ajouté');
                 return $this->redirectToRoute('static');        
             }          
         }

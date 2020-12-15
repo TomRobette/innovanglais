@@ -27,7 +27,7 @@ class LangueController extends AbstractController
               $em = $this->getDoctrine()->getManager();              
               $em->persist($langue);              
               $em->flush();        
-            $this->addFlash('notice','>Catégorie ajouté'); 
+            $this->addFlash('notice','Langue ajouté'); 
            
             } 
             return $this->redirectToRoute('ajoutLangue');
