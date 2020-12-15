@@ -34,4 +34,19 @@ class ThemeController extends AbstractController
             'form'=>$form->createView()
         ]);
     }
+
+            /**
+         * @Route("/listeTheme", name="listeTheme")
+         */
+        public function listeTheme(Request $request)
+        {
+            $em = $this->getDoctrine();
+            $repoTheme = $em->getRepository(Theme::class);
+            $theme = $repoTheme->findBy(array(),array('id'=>'ASC'));
+
+            
+            return $this->render('theme/listeTheme.html.twig', [
+                'theme'=>$theme
+            ]);
+        }
 }

@@ -27,7 +27,7 @@ class CategorieController extends AbstractController
               $em = $this->getDoctrine()->getManager();              
               $em->persist($categorie);              
               $em->flush();        
-            $this->addFlash('notice','>Catégorie ajouté'); 
+            $this->addFlash('notice','Catégorie ajouté'); 
            
             } 
             return $this->redirectToRoute('ajoutCategorie');

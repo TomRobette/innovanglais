@@ -35,4 +35,19 @@ class AbonnementController extends AbstractController
             'form'=>$form->createView()
         ]);
     }
+
+            /**
+         * @Route("/listeAbonnement", name="listeAbonnement")
+         */
+        public function listeAbonnement(Request $request)
+        {
+            $em = $this->getDoctrine();
+            $repoAbonnement = $em->getRepository(Abonnement::class);
+            $abonnement = $repoAbonnement->findBy(array(),array('id'=>'ASC'));
+
+            
+            return $this->render('abonnement/listeAbonnement.html.twig', [
+                'abonnement'=>$abonnement
+            ]);
+        }
 }

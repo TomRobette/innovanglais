@@ -8,13 +8,20 @@
 -Tentative d'ajout de mot dans listeMots de Liste
 
 #15/12/2020#RemiAccart#
+-Ajout du menu déroulant
 -Ajout liste langue
 -Ajout liste categorie
 -Ajout liste entreprise
 -Remake du ajout abonnement
+-Ajout liste abonnement
+-Ajout liste liste
+-Ajout liste test
+-Ajout liste theme
+-Ajout liste vocabulaire
+-Ajout liste niveau
 
 #15/12/2020#HugoFontaine#
--Ajout de theme
+-Correction de theme
 -Ajout de test
 
 

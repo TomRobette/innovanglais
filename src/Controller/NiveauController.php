@@ -27,7 +27,7 @@ class NiveauController extends AbstractController
               $em = $this->getDoctrine()->getManager();              
               $em->persist($niveau);              
               $em->flush();        
-            $this->addFlash('notice','>Catégorie ajouté'); 
+            $this->addFlash('notice','Niveau ajouté'); 
            
             } 
             return $this->redirectToRoute('ajoutNiveau');
@@ -37,4 +37,19 @@ class NiveauController extends AbstractController
             'form'=>$form->createView()
         ]);
     }
+
+           /**
+         * @Route("/listeNiveau", name="listeNiveau")
+         */
+        public function listeNiveau(Request $request)
+        {
+            $em = $this->getDoctrine();
+            $repoNiveau = $em->getRepository(Niveau::class);
+            $niveau = $repoNiveau->findBy(array(),array('id'=>'ASC'));
+
+            
+            return $this->render('niveau/listeNiveau.html.twig', [
+                'niveau'=>$niveau
+            ]);
+        }
 }

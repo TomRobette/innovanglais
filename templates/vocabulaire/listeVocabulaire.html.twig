@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent()}} - liste categorie{% endblock %}
+{% block title %}{{ parent()}} - liste vocabulaire{% endblock %}
 
 {% block content %} 
 <div class="container-fluid">           
     <div class="row justify-content-center">            
-        <h1 class="text-center text-primary p-4">Liste des Categories</h1>        
+        <h1 class="text-center text-primary p-4">Liste des vocabulaires</h1>        
     </div>        
     <div class="row justify-content-center">            
     <div class="col-8 bg-white p-4 m-0 text-dark"> 
@@ -13,16 +13,20 @@
     <thead>
         <tr>
         <th scope="col">N°</th>
-        <th scope="col">Libelle</th>
+        <th scope="col">mot</th>
+        <th scope="col">categorie</th>
+        <th scope="col">langue</th>
         </tr>
     </thead>
     <tbody>
       
-        {% for categorie in categorie %}
+        {% for vocs in vocs %}
             <tr class="{{ cycle(['table-info', 'table-light'], loop.index0)}}">
 
-                <td>{{categorie.id}}</td>
-                <td>{{categorie.libelle}}</td>
+                <td>{{vocs.id|capitalize}}</td>
+                <td>{{vocs.mot|capitalize}}</td>
+                <td>{{vocs.categorie.libelle|capitalize}}</td>
+                <td>{{vocs.lang.nom|capitalize}}</td>
 
             </tr>
         {% endfor %} 

@@ -27,7 +27,7 @@ class ListeController extends AbstractController
                 $em->persist($liste);
                 $em->flush();
 
-                $this->addFlash('notice','Liste insérée');
+                $this->addFlash('notice','Liste ajouté');
                 return $this->redirectToRoute('static');        
             }          
         }
@@ -35,4 +35,19 @@ class ListeController extends AbstractController
             'form'=>$form->createView() 
         ]);
     }
+
+              /**
+         * @Route("/listeListe", name="listeListe")
+         */
+        public function listeListe(Request $request)
+        {
+            $em = $this->getDoctrine();
+            $repoListe = $em->getRepository(Liste::class);
+            $liste = $repoListe->findBy(array(),array('id'=>'ASC'));
+
+            
+            return $this->render('liste/listeListe.html.twig', [
+                'liste'=>$liste
+            ]);
+        }
 }
