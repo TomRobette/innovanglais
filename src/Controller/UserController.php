@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
 use App\Form\AjoutUserType;
+use App\Form\ModifUserType;
 use Symfony\Component\HttpFoundation\Request;
 use App\Repository\UserRepository;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -53,11 +54,53 @@ class UserController extends AbstractController
         {
             $em = $this->getDoctrine();
             $repoUser = $em->getRepository(User::class);
-            $user = $repoUser->findBy(array(),array('id'=>'ASC'));
 
+            if($request->get('supp')!=null){
+                $user = $repoUser->find($request->get('supp'));
+                if($user!=null){
+                    $em->getManager()->remove($user);
+                    $em->getManager()->flush();
+                }
+                $this->redirectToRoute('liste_user');
+            }
+    
+            $user = $repoUser->findBy(array(), array('id'=>'ASC'));
+            
             
             return $this->render('user/liste_user.html.twig', [
                 'user'=>$user
             ]);
         }
+
+                    /**
+     * @Route("/modifUser/{id}", name="modifUser", requirements={"id"="\d+"})
+     */
+    public function modifUser(int $id, Request $request)
+    {
+        $em = $this->getDoctrine();
+        $repoUser = $em->getRepository(User::class);
+        $user = $repoUser->find($id);
+
+        if($user==null){
+            $this->addFlash('notice','Cette page n\'existe pas');
+            return $this->redirectToRoute('liste_user');   
+        }
+
+        $form = $this->createForm(ModifUserType::class,$user);
+
+        if ($request->isMethod('POST')) {            
+            $form->handleRequest($request);            
+            if ($form->isSubmitted() && $form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->flush();
+                $this->addFlash('notice','Utilisateur modifié');
+                return $this->redirectToRoute('liste_user');        
+            }          
+        } 
+
+        return $this->render('user/modifUser.html.twig', [            
+            'form'=>$form->createView()        
+        ]);
+    }
 }

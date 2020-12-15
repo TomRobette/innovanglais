@@ -45,9 +45,18 @@ class LangueController extends AbstractController
         {
             $em = $this->getDoctrine();
             $repoLangue = $em->getRepository(Langue::class);
-            $langue = $repoLangue->findBy(array(),array('id'=>'ASC'));
 
-            
+            if($request->get('supp')!=null){
+              $langue = $repoLangue->find($request->get('supp'));
+              if($langue!=null){
+                  $em->getManager()->remove($langue);
+                  $em->getManager()->flush();
+              }
+              $this->redirectToRoute('listeLangue');
+          }
+  
+          $langue = $repoLangue->findBy(array(), array('id'=>'ASC'));
+           
             return $this->render('langue/listeLangue.html.twig', [
                 'langue'=>$langue
             ]);

@@ -33,6 +33,7 @@
                 <td>{{entreprise.adrCp|capitalize}}</td>
                 <td>{{entreprise.adrRue|capitalize}}</td>
                 <td>{{entreprise.adrNo|capitalize}}</td>
+                <td><a href="{{path('listeEntreprise',{'supp':entreprise.id})}}"><span class="material-icons text-dark" title="Supprimer le test">delete</span></a></td>
 
             </tr>
         {% endfor %} 

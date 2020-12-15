@@ -19,10 +19,13 @@
 -Ajout liste theme
 -Ajout liste vocabulaire
 -Ajout liste niveau
+-Ajout de la suppresion sur chaque liste
+-Ajout de la modification sur test,utilisateur,vocabulaire et theme
 
 #15/12/2020#HugoFontaine#
 -Correction de theme
 -Ajout de test
+-Appli mobile
 
 
 #14/12/2020#RemiAccart#

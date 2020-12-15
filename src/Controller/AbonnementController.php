@@ -43,8 +43,17 @@ class AbonnementController extends AbstractController
         {
             $em = $this->getDoctrine();
             $repoAbonnement = $em->getRepository(Abonnement::class);
-            $abonnement = $repoAbonnement->findBy(array(),array('id'=>'ASC'));
 
+            if($request->get('supp')!=null){
+                $abonnement = $repoAbonnement->find($request->get('supp'));
+                if($abonnement!=null){
+                    $em->getManager()->remove($abonnement);
+                    $em->getManager()->flush();
+                }
+                $this->redirectToRoute('listeAbonnement');
+            }
+    
+            $abonnement = $repoAbonnement->findBy(array(), array('id'=>'ASC'));
             
             return $this->render('abonnement/listeAbonnement.html.twig', [
                 'abonnement'=>$abonnement

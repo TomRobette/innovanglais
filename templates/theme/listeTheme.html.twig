@@ -23,7 +23,8 @@
 
                 <td>{{theme.id}}</td>
                 <td>{{theme.libelle}}</td>
-
+                <td><a href="{{path('modifTheme',{'id':theme.id})}}"><span class="material-icons text-dark" title="Modifier le thème">create</span></a><a href="{{path('listeTheme',{'supp':theme.id})}}"><span class="material-icons text-dark" title="Supprimer le thème">delete</span></a></td>
+            
             </tr>
         {% endfor %} 
     </tbody>

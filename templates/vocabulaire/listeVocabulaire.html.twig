@@ -27,6 +27,7 @@
                 <td>{{vocs.mot|capitalize}}</td>
                 <td>{{vocs.categorie.libelle|capitalize}}</td>
                 <td>{{vocs.lang.nom|capitalize}}</td>
+                <td><a href="{{path('modifVocabulaire',{'id':vocs.id})}}"><span class="material-icons text-dark" title="Modifier le thème">create</span></a><a href="{{path('listeVocabulaire',{'supp':vocs.id})}}"><span class="material-icons text-dark" title="Supprimer le mot">delete</span></a></td>
 
             </tr>
         {% endfor %} 

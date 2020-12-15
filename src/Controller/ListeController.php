@@ -43,8 +43,17 @@ class ListeController extends AbstractController
         {
             $em = $this->getDoctrine();
             $repoListe = $em->getRepository(Liste::class);
-            $liste = $repoListe->findBy(array(),array('id'=>'ASC'));
 
+            if($request->get('supp')!=null){
+                $liste = $repoListe->find($request->get('supp'));
+                if($liste!=null){
+                    $em->getManager()->remove($liste);
+                    $em->getManager()->flush();
+                }
+                $this->redirectToRoute('listeListe');
+            }
+    
+            $liste = $repoListe->findBy(array(), array('id'=>'ASC'));
             
             return $this->render('liste/listeListe.html.twig', [
                 'liste'=>$liste

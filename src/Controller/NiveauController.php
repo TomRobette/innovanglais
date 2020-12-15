@@ -45,8 +45,17 @@ class NiveauController extends AbstractController
         {
             $em = $this->getDoctrine();
             $repoNiveau = $em->getRepository(Niveau::class);
-            $niveau = $repoNiveau->findBy(array(),array('id'=>'ASC'));
 
+            if($request->get('supp')!=null){
+              $niveau = $repoNiveau->find($request->get('supp'));
+              if($niveau!=null){
+                  $em->getManager()->remove($niveau);
+                  $em->getManager()->flush();
+              }
+              $this->redirectToRoute('listeNiveau');
+          }
+  
+          $niveau = $repoNiveau->findBy(array(), array('id'=>'ASC'));
             
             return $this->render('niveau/listeNiveau.html.twig', [
                 'niveau'=>$niveau
