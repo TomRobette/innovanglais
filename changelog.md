@@ -7,6 +7,7 @@
 -Corrections des bugs de Hugo
 
 #15/12/2020#RemiAccart#
+-Ajout du menu déroulant
 -Ajout liste langue
 -Ajout liste categorie
 -Ajout liste entreprise
